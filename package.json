@@ -1,6 +1,6 @@
 {
   "name": "xzqserver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "node迷你服务器",
   "main": "index.js",
   "bin": {
