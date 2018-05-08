@@ -6,9 +6,6 @@ const handlebars = require('handlebars')
 const mimeTypes = require('./content_types')
 const compress = require('./compress')
 const openUrl = require('./openUrl')
-const promisify = require('util').promisify
-const stat = promisify(fs.stat)
-const readdir = promisify(fs.readdir)
 const conf = require('./config')
 
 
@@ -17,7 +14,7 @@ const template = handlebars.compile(source.toString())
 
 const route = async(req,res,filePath)=>{
     try{
-        const stats = await stat(filePath)
+        const stats = await fs.statSync(filePath)
         if(stats.isFile()){
             const contentType = mimeTypes(filePath)
             res.statusCode = 200
@@ -28,7 +25,7 @@ const route = async(req,res,filePath)=>{
             }
             rs.pipe(res)
         }else if(stats.isDirectory()){
-            const files = await readdir(filePath)
+            const files = await fs.readdirSync(filePath)
             res.statusCode = 200
             res.setHeader('Content-Type','text/html')
             const data = {
