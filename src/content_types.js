@@ -1,0 +1,105 @@
+const path = require('path')
+
+const MimeType = {
+    'css':{
+        desc:'text/css',
+        icon:''
+    },
+    'gif':{
+        desc:'image/gif',
+        icon:''
+    },
+    'html':{
+        desc:'text/html',
+        icon:''
+    },
+    'icon':{
+        desc:'image/x-icon',
+        icon:''
+    },
+    'jpeg':{
+        desc:'image/jpeg',
+        icon:''
+    },
+    'jpg':{
+        desc:'image/jpeg',
+        icon:''
+    },
+    'js':{
+        desc:'text/javascript',
+        icon:''
+    },
+    'json':{
+        desc:'application/json',
+        icon:''
+    },
+    'pdf':{
+        desc:'application/pdf',
+        icon:''
+    },
+    'png':{
+        desc:'image/png',
+        icon:''
+    },
+    'svg':{
+        desc:'image/svg+xml',
+        icon:''
+    },
+    'swf':{
+        desc:'application/x-shockwave-flash',
+        icon:''
+    },
+    'tiff':{
+        desc:'image/tiff',
+        icon:''
+    },
+    'txt':{
+        desc:'text/plain',
+        icon:''
+    },
+    'wav':{
+        desc:'audio/x-wav',
+        icon:''
+    },
+    'wma':{
+        desc:'audio/x-ms-wma',
+        icon:''
+    },
+    'wmv':{
+        desc:'video/x-ms-wmv',
+        icon:''
+    },
+    'xml':{
+        desc:'text/xml',
+        icon:''
+    },
+    'mp3':{
+        desc:'audio/mp3',
+        icon:''
+    },
+    'mp4':{
+        desc:'video/mpeg4',
+        icon:''
+    },
+    'flv':{
+        desc:'audio/mp4',
+        icon:''
+    },
+    'rmvb':{
+        desc:'application/vnd.rn-realmedia-vbr',
+        icon:''
+    },
+    'avi':{
+        desc:'video/avi',
+        icon:''
+    }
+}
+
+module.exports = (filePath)=>{
+    let ext = path.extname(filePath).split('.').pop().toLowerCase()
+    if(!ext){
+        ext = filePath
+    }
+
+    return MimeType[ext] || MimeType['txt']
+}
