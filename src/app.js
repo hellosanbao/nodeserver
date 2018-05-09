@@ -28,13 +28,14 @@ const route = async(req,res,filePath)=>{
             const files = await fs.readdirSync(filePath)
             res.statusCode = 200
             res.setHeader('Content-Type','text/html')
+            const dir = path.relative(conf.root,filePath)
             const data = {
                 title:path.basename(filePath),
-                dir:path.relative(conf.root,filePath),
+                dir:dir?`/${dir}`:'',
                 files:files.map(file=>{
                     return {
                         file,
-                        icon:mimeTypes(file).icon
+                        icon:mimeTypes(`${filePath}/${file}`).icon
                     }
                 })
             }
