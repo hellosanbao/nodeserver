@@ -67,7 +67,7 @@
             width: 1000px;
             height: 800px;
             margin: 30px auto 0;
-            background: url("/src/static/bg.png") no-repeat center/100% auto;
+            background: url('http://oss.mendada.cn/xzqserver/bg.png') no-repeat center/100% auto;
             font-family: Arial, Helvetica, sans-serif;
             overflow: hidden;
         }
