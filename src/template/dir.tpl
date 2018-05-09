@@ -105,6 +105,7 @@
             text-overflow:ellipsis;
             white-space: nowrap;
             margin-top: 10px;
+            width: 100px;
         }
         .file-item a{
             align-self: flex-end;
