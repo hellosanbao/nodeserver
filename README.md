@@ -4,7 +4,7 @@
 ## 安装
 
 ```
-npm i -g server
+npm i -g xzqserver
 ```
 
 ## 使用方法
