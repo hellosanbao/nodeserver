@@ -63,6 +63,9 @@
             -webkit-box-direction:normal;
             -ms-flex-direction:column;
         }
+        body{
+            background: url(http://oss.mendada.cn/xzqserver/E0D1ED15000D1F37B5EC42422CD73BAD.jpg) #333;
+        }
         .content{
             width: 1000px;
             height: 800px;
