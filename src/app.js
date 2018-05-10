@@ -13,6 +13,7 @@ const source = fs.readFileSync(path.join(__dirname,'./template/dir.tpl'))
 const template = handlebars.compile(source.toString())
 
 const route = async(req,res,filePath)=>{
+    filePath = decodeURIComponent(filePath)
     try{
         const stats = await fs.statSync(filePath)
         if(stats.isFile()){
